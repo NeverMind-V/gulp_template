@@ -1,0 +1,19 @@
+{
+  "name": "gulp_template",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "nevermind_v"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.2.1"
+  }
+}
