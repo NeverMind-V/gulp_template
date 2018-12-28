@@ -1,0 +1,1 @@
+var array = 'Hello World';
