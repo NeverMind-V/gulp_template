@@ -1,0 +1,135 @@
+//----------------------------------------------------//
+// Mixins & Includes                                  //
+//----------------------------------------------------//
+@mixin notext {
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .centered {
+    display: table;
+    width: 100%;
+    height: 100%;
+    > * {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  
+  // PLACEHOLDER MIXIN
+  @mixin placeholderColor($input-text-color) {
+    &::-webkit-input-placeholder {
+      color: $input-text-color;
+    }
+    &:-moz-placeholder {
+      color: $input-text-color;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: $input-text-color;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $input-text-color;
+    }
+    &:focus:-moz-placeholder {
+      color: transparent;
+      opacity: 1;
+    }
+    &:focus::-moz-placeholder {
+      color: transparent;
+      opacity: 1;
+    }
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &:focus:-ms-input-placeholder {
+      color: transparent;
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+  
+  @mixin clearfix {
+    &:after {
+      content: " ";
+      display: block;
+      clear: both;
+    }
+  }
+  
+  // Clear select without default button
+  @mixin clearSelect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  
+  //elements get appended with "__" and the $name
+  @mixin e($name) {
+    @at-root   #{&}__#{$name} {
+      @content;
+    }
+  }
+  
+  //modifiers get appended with "--" and the $name
+  @mixin m($name) {
+    @at-root   #{&}--#{$name} {
+      @content;
+    }
+  }
+  
+  /*by default - bootstap grid. If you want custom grid - uncomment next mixin*/
+  
+  //@mixin b($point) {
+  //  @if $point == desktop {
+  //    @media (min-width: 1200px) {
+  //      @content;
+  //    }
+  //  } @else if $point == laptop {
+  //    @media (max-width: 1199px) {
+  //      @content;
+  //    }
+  //  } @else if $point == tablet {
+  //    @media (max-width: 991px) {
+  //      @content;
+  //    }
+  //  } @else if $point == phablet {
+  //    @media (max-width: 767px) {
+  //      @content;
+  //    }
+  //  } @else if $point == mobile {
+  //    @media (max-width: 575px) {
+  //      @content;
+  //    }
+  //  }
+  //}
+  
+  //----------------------------------------------------//
+  // REM FONT_SIZE WITH FALLBACK 												//
+  //----------------------------------------------------//
+  // USAGE:
+  // p {
+  //   @include font-size(14px)
+  // }
+  
+  @function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+  }
+  
+  @mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+  }

@@ -1,0 +1,100 @@
+//----------------------------------------------------//
+// TYPOGRAPHY                                         //
+//----------------------------------------------------//
+body {
+    background: #fff;
+    color: $black;
+    font-family: $main_font, $fix_font;
+    font-size: $main_font_size;
+    font-weight: 400;
+    line-height: $main_line_height;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: $black;
+    font-family: $main_font, $fix_font;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 26px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  h4 {
+    font-size: 22px;
+  }
+  
+  h5 {
+    font-size: 20px;
+  }
+  
+  h6 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  
+  hr {
+    overflow: hidden;
+    height: 1px;
+    background: $black;
+    border: 0;
+    margin: 10px 0;
+  }
+  
+  q,
+  blockquote {
+    text-align: center;
+    display: block;
+    font-style: italic;
+  }
+  
+  strong,
+  b {
+    font-weight: 700;
+  }
+  
+  a {
+    color: $red;
+    transition: $main_animation;
+    text-decoration: none;
+    &.button {
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: $black;
+  }
+  
+  a:active {
+  }
+  
+  a:visited {
+  }
+  
+  ul {
+    li {
+      padding-bottom: 4px;
+    }
+  }
+  

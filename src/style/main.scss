@@ -1,7 +1,15 @@
-@import "bower_components/bootstrap/scss/bootstrap";
+@import "bower_components/bootstrap/scss/bootstrap",
+    "partials/variable",
+    "partials/fonts",    
+    "partials/layout",
+    "partials/mixins",
+    "partials/typography";
 
 * {
     margin:0;
     padding:0;
     box-sizing: border-box;
+}
+.main {
+   
 }
